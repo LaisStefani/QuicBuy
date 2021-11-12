@@ -78,13 +78,15 @@ namespace QuickBuy.Web
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
                 spa.Options.SourcePath = "ClientApp";
+                spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 80);
 
+   
                 if (env.IsDevelopment())
                 {
-                    //Esse start junto
-                   //  spa.UseAngularCliServer(npmScript: "start");
-                    //esse start separado
-                   spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
+                   // Esse start junto
+               //  spa.UseAngularCliServer(npmScript: "start");
+                  //  esse start separado
+                  spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
                 }
             });
         }
